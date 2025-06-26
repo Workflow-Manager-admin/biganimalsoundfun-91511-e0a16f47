@@ -1,0 +1,274 @@
+/* CSS Variables for Theme Management */
+:root {
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #282c34;
+  --text-secondary: #61dafb;
+  --border-color: #e9ecef;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #282c34;
+  --text-primary: #ffffff;
+  --text-secondary: #61dafb;
+  --border-color: #404040;
+  --button-bg: #0056b3;
+  --button-text: #ffffff;
+}
+
+.App {
+  text-align: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Animal Sound Game Theme Extension --- */
+.animal-app-bg {
+  background: linear-gradient(135deg, #fffbe9 0%, #fde5ec 100%);
+}
+
+/* Header Styles */
+.animal-header {
+  background: linear-gradient(90deg, #4caf50 10%, #ffc107 90%);
+  color: #fff;
+  font-size: 2.2rem;
+  font-family: 'Comic Sans MS', 'Comic Sans', 'Baloo', cursive, sans-serif;
+  font-weight: bold;
+  padding: 34px 0 20px 0;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+  position: relative;
+  box-shadow: 0 4px 16px 0 #4caf5020;
+  border-radius: 0 0 32px 32px;
+  z-index: 1;
+}
+.game-title {
+  font-size: 2.3rem;
+  color: #ff5722;
+  text-shadow: 1px 2px 8px #ddd5;
+  padding-left: 10px;
+}
+
+/* Animal Grid Layout */
+.animal-grid {
+  width: 98%;
+  max-width: 700px;
+  margin: 25px auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 2.3rem;
+  justify-items: center;
+  align-items: center;
+  padding: 2rem 1.1rem 1.1rem 1.1rem;
+}
+
+/* Animal Icon Button */
+.animal-btn {
+  background: linear-gradient(120deg, #ffc10799 10%, #4caf50bb 100%);
+  border: 3px solid #ff5722;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px 0 #4caf505c;
+  outline: none;
+  width: 170px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.13s cubic-bezier(.53,1.07,.42,.99), box-shadow 0.2s, border 0.2s;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.animal-btn:hover,
+.animal-btn:focus {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px 0 #4caf5070;
+  border-color: #ff9800;
+}
+
+.animal-btn:active,
+.animal-btn.pressed {
+  transform: scale(0.96);
+  background: linear-gradient(135deg, #ffecb3 0%, #a5d6a7 100%);
+  border-color: #8d6e63;
+  box-shadow: 0 2px 6px 0 #bdbdbd67;
+}
+
+.animal-svg {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animal-label {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 8px #8886, 0 2px 0 #4caf50aa;
+  font-family: inherit;
+  margin-top: 6px;
+}
+
+/* Footer styles */
+.animal-footer {
+  margin-top: auto;
+  padding: 16px 0 18px 0;
+  background: linear-gradient(90deg, #ffc107 20%, #4caf50 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -1px 9px 0 #4caf5060;
+}
+
+.animal-footer code {
+  background: #ffecb3;
+  color: #795548;
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-size: 0.97em;
+}
+.sources-note {
+  margin-top: 3px;
+  font-size: 0.97rem;
+  color: #ffdeda;
+  opacity: 0.82;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 900px) {
+  .animal-grid {
+    max-width: 98vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.3rem;
+    padding: 1.2rem .8rem;
+  }
+  .animal-btn {
+    width: 140px;
+    height: 155px;
+  }
+  .animal-svg {
+    width: 78px;
+    height: 78px;
+  }
+}
+@media (max-width: 630px) {
+  .animal-header {
+    font-size: 1.48rem;
+    padding: 18px 0 10px 0;
+  }
+  .animal-grid {
+    gap: 1rem;
+    padding: .4rem .1rem;
+  }
+  .animal-btn {
+    width: 110px;
+    height: 115px;
+    border-radius: 22px;
+    padding-bottom: 6px;
+  }
+  .animal-svg {
+    width: 58px;
+    height: 58px;
+  }
+  .animal-label {
+    font-size: .89rem;
+  }
+  .animal-footer {
+    font-size: 0.97rem;
+    border-radius: 19px 19px 0 0;
+    padding: 9px 0;
+  }
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--bg-secondary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.App-link {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
